@@ -15,7 +15,7 @@
 
 &emsp;&emsp;`Lagent` 是一个轻量级、开源的基于大语言模型的智能体（agent）框架，支持用户快速地将一个大语言模型转变为多种类型的智能体，并提供了一些典型工具为大语言模型赋能。通过 `Lagent` 框架可以更好的发挥 `InternLM` 的全部性能。
 
-![Lagent 框架图](./images/Lagent.png)
+![Lagent 框架图](./figures/11.png)
 
 &emsp;&emsp;浦语·灵笔是基于书生·浦语大语言模型研发的视觉-语言大模型，提供出色的图文理解和创作能力，结合了视觉和语言的先进技术，能够实现图像到文本、文本到图像的双向转换。
 
@@ -27,7 +27,7 @@
 
 在 [InternStudio](https://studio.intern-ai.org.cn/) 平台中选择 A100(1/4) 的配置，如下图所示镜像选择 `Cuda11.7-conda`，如下图所示：
 
-![Alt text](images/image.png)
+![Alt text](./figures/12.png)
 
 接下来打开刚刚租用服务器的`进入开发机`，并且打开其中的终端开始环境配置、模型下载和运行 `demo`。
 
@@ -35,8 +35,7 @@
 
 进入开发机后，在页面的左上角可以切换 `JupyterLab`、`终端`和 `VScode`，并在终端输入 `bash` 命令，进入 `conda` 环境。如下图所示：
 
-![Alt text](images/image-11.png)
-
+![Alt text](./figures/13.png)
 进入 `conda` 环境之后，使用以下命令从本地克隆一个已有的 `pytorch 2.0.1` 的环境
 
 ```shell
@@ -144,7 +143,7 @@ streamlit run web_demo.py --server.address 127.0.0.1 --server.port 6006
 
 在加载完模型之后，就可以与 InternLM-Chat-7B 进行对话了，如下图所示：
 
-![Alt text](images/image-6.png)
+![Alt text](./figures/4.png)
 
 ## 3 Lagent 智能体工具调用 Demo
 
@@ -433,7 +432,7 @@ streamlit run /root/code/lagent/examples/react_web_demo.py --server.address 127.
 
 我们在 `Web` 页面选择 `InternLM` 模型，等待模型加载完毕后，输入数学问题 已知 `2x+3=10`，求`x` ,此时 `InternLM-Chat-7B` 模型理解题意生成解此题的 `Python` 代码，`Lagent` 调度送入 `Python` 代码解释器求出该问题的解。
 
-![Alt text](images/image-7.png)
+![Alt text](./figures/5.png)
 
 ## 4. 浦语·灵笔图文理解创作 Demo
 
@@ -514,11 +513,11 @@ python examples/web_demo.py  \
 
 将端口映射到本地。在本地浏览器输入 `http://127.0.0.1:6006` 即可。我们以`又见敦煌`为提示词，体验图文创作的功能，如下图所示：
 
-![Alt text](images/image-9.png)
+![Alt text](./figures/6.png)
 
 接下来，我们可以体验一下图片理解的能力，如下所示~
 
-![Alt text](images/image-10.png)
+![Alt text](./figures/8.png)
 
 ## 5. 通用环境配置
 
@@ -588,7 +587,6 @@ EOF
 ```shell
 ssh-keygen -t rsa
 ```
-![Alt text](images/image-13.png)
 
 步骤②： 您将被提示选择密钥文件的保存位置，默认情况下是在 `~/.ssh/` 目录中。按 `Enter` 键接受默认值或输入自定义路径。
 
@@ -609,7 +607,7 @@ cat ~\.ssh\id_rsa.pub
 ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p 33090
 ```
 
-![Alt text](images/image-14.png)
+![Alt text](./figures/14.png)
 
 ### 5.3 模型下载
 
